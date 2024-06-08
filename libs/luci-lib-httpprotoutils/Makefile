@@ -7,7 +7,9 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=HTTP protocol utility functions
-LUCI_DEPENDS:=+luci-base
+LUCI_DEPENDS:=+luci-lib-base
+
+PKG_LICENSE:=Apache-2.0
 
 include ../../luci.mk
 

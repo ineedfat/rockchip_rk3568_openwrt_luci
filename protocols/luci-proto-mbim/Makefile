@@ -6,9 +6,11 @@
 
 include $(TOPDIR)/rules.mk
 
-LUCI_TITLE:=LuCI support for MBIM
+LUCI_TITLE:=Support for MBIM
 LUCI_DEPENDS:=+umbim
-LUCI_PKGARCH:=all
+
+PKG_LICENSE:=Apache-2.0
+PKG_MAINTAINER:=Howard Chu <hyc@symas.com>
 
 include ../../luci.mk
 

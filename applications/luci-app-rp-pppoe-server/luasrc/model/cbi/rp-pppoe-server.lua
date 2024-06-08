@@ -1,4 +1,4 @@
--- Copyright 2015 Daniel Dickinson <openwrt@daniel.thecshore.com>
+-- Copyright 2015 Daniel F. Dickinson <dfdpublic@wildtechgarden.ca>
 -- Licensed to the public under the Apache License 2.0.
 
 local m, s, o
@@ -9,11 +9,11 @@ m = Map("pppoe", translate("Roaring Penguin PPPoE Server"),
 	translate("PPPoE Server Configuration"))
 
 s = m:section(TypedSection, "pppoe_server", translate("Server Configuration"))
-s.addremove = false
+s.addremove = true
 s.anonymous = true
 
 o = s:option(Value, "interface", translate("Interface"), translate("Interface on which to listen."))
-o.template = "cbi/network_ifacelist"
+o.template = "cbi/network_netlist"
 o.nocreate = true
 
 o = s:option(Value, "ac_name", translate("Access Concentrator Name"))
@@ -27,7 +27,7 @@ o.optional = true
 o.datatype = "uinteger"
 
 o = s:option(Value, "localip", translate("IP of listening side"))
-o.datetype = "ipaddr"
+o.datatype = "ipaddr"
 
 o = s:option(Value, "firstremoteip", translate("First remote IP"))
 o.datatype = "ipaddr"
